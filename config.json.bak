@@ -1,0 +1,10 @@
+{
+  "token": "ТВОЙ_ТОКЕН_БОТА",
+  "clientId": "ТВОЙ_CLIENT_ID",
+  "guildId": "ТВОЙ_GUILD_ID",
+  "logChannelId": "ТВОЙ_LOG_CHANNEL_ID",
+  "adminRoleId": "ТВОЙ_ADMIN_ROLE_ID",
+  "applicationCooldownHours": 24,
+  "activityType": "WATCHING",
+  "activityText": "за World Wide"
+}

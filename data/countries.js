@@ -1,0 +1,103 @@
+// Полный список стран с регионами
+// region: ключ региона для сортировки в select-меню
+const COUNTRIES = [
+  { flag: '🇦🇹', name: 'Австрия',                   region: 'europe1' },
+  { flag: '🇦🇩', name: 'Андорра',                   region: 'europe1' },
+  { flag: '🇧🇪', name: 'Бельгия',                   region: 'europe1' },
+  { flag: '🇧🇬', name: 'Болгария',                  region: 'europe1' },
+  { flag: '🇻🇦', name: 'Ватикан',                   region: 'europe1' },
+  { flag: '🇬🇧', name: 'Великобритания',             region: 'europe1' },
+  { flag: '🇩🇪', name: 'Веймарская Республика',      region: 'europe1' },
+  { flag: '🇭🇺', name: 'Венгрия',                   region: 'europe1' },
+  { flag: '🇬🇷', name: 'Греция',                    region: 'europe1' },
+  { flag: '🇩🇰', name: 'Дания',                     region: 'europe1' },
+  { flag: '🇮🇪', name: 'Ирландия',                  region: 'europe1' },
+  { flag: '🇪🇸', name: 'Испания',                   region: 'europe1' },
+  { flag: '🇮🇹', name: 'Италия',                    region: 'europe1' },
+  { flag: '🇱🇻', name: 'Латвия',                    region: 'europe1' },
+  { flag: '🇱🇹', name: 'Литва',                     region: 'europe1' },
+  { flag: '🇱🇺', name: 'Люксембург',                region: 'europe1' },
+  { flag: '🇳🇱', name: 'Нидерланды',                region: 'europe1' },
+  { flag: '🇳🇴', name: 'Норвегия',                  region: 'europe1' },
+  { flag: '🇵🇱', name: 'Польша',                    region: 'europe1' },
+  { flag: '🇵🇹', name: 'Португалия',                region: 'europe1' },
+  { flag: '🇷🇴', name: 'Румыния',                   region: 'europe1' },
+  { flag: '🇸🇲', name: 'Сан-Марино',                region: 'europe1' },
+  { flag: '🚩',   name: 'СССР',                      region: 'europe1' },
+  { flag: '🇫🇮', name: 'Финляндия',                 region: 'europe1' },
+  { flag: '🇫🇷', name: 'Франция',                   region: 'europe1' },
+
+  { flag: '🇨🇿', name: 'Чехословакия',              region: 'europe2' },
+  { flag: '🇸🇪', name: 'Швеция',                    region: 'europe2' },
+  { flag: '🇨🇭', name: 'Швейцария',                 region: 'europe2' },
+  { flag: '🇪🇪', name: 'Эстония',                   region: 'europe2' },
+  { flag: '🇷🇸', name: 'Югославия',                 region: 'europe2' },
+
+  { flag: '🇦🇫', name: 'Афганистан',                region: 'asia' },
+  { flag: '🇧🇹', name: 'Династия Цин',              region: 'asia' },
+  { flag: '🇮🇶', name: 'Ирак',                      region: 'asia' },
+  { flag: '🇾🇪', name: 'Йемен',                     region: 'asia' },
+  { flag: '🇲🇳', name: 'Монголия',                  region: 'asia' },
+  { flag: '🇹🇼', name: 'Нанкинская республика',     region: 'asia' },
+  { flag: '🇮🇷', name: 'Персия',                    region: 'asia' },
+  { flag: '🇹🇭', name: 'Сиам',                      region: 'asia' },
+  { flag: '🇹🇼', name: 'Сычуаньский конгломерат',   region: 'asia' },
+  { flag: '🏳️', name: 'Тибет',                     region: 'asia' },
+  { flag: '🇹🇷', name: 'Турция',                    region: 'asia' },
+  { flag: '🇯🇵', name: 'Япония',                    region: 'asia' },
+
+  { flag: '🇬🇹', name: 'Гватемала',                 region: 'north_america' },
+  { flag: '🇭🇹', name: 'Гаити',                     region: 'north_america' },
+  { flag: '🇭🇳', name: 'Гондурас',                  region: 'north_america' },
+  { flag: '🇩🇴', name: 'Доминиканская Республика',  region: 'north_america' },
+  { flag: '🇨🇦', name: 'Канада',                    region: 'north_america' },
+  { flag: '🇨🇷', name: 'Коста-Рика',               region: 'north_america' },
+  { flag: '🇨🇺', name: 'Куба',                      region: 'north_america' },
+  { flag: '🇲🇽', name: 'Мексика',                   region: 'north_america' },
+  { flag: '🇳🇮', name: 'Никарагуа',                 region: 'north_america' },
+  { flag: '🇬🇧', name: 'Ньюфаундленд',              region: 'north_america' },
+  { flag: '🇵🇦', name: 'Панама',                    region: 'north_america' },
+  { flag: '🇸🇻', name: 'Сальвадор',                 region: 'north_america' },
+  { flag: '🇺🇸', name: 'США',                       region: 'north_america' },
+
+  { flag: '🇦🇷', name: 'Аргентина',                 region: 'south_america' },
+  { flag: '🇧🇷', name: 'Бразилия',                  region: 'south_america' },
+  { flag: '🇻🇪', name: 'Венесуэла',                 region: 'south_america' },
+  { flag: '🇨🇴', name: 'Колумбия',                  region: 'south_america' },
+  { flag: '🇵🇪', name: 'Перу',                      region: 'south_america' },
+  { flag: '🇺🇾', name: 'Уругвай',                   region: 'south_america' },
+  { flag: '🇨🇱', name: 'Чили',                      region: 'south_america' },
+  { flag: '🇪🇨', name: 'Эквадор',                   region: 'south_america' },
+
+  { flag: '🇦🇺', name: 'Австралия',                 region: 'africa_oceania' },
+  { flag: '🇪🇬', name: 'Египет',                    region: 'africa_oceania' },
+  { flag: '🇳🇿', name: 'Новая Зеландия',            region: 'africa_oceania' },
+  { flag: '🇿🇦', name: 'Южно-Африканский Союз',     region: 'africa_oceania' },
+];
+
+// Регионы с метаданными для select-меню
+const REGIONS = {
+  europe1:       { label: '🇪🇺 Европа — часть 1',                  description: 'Австрия, Бельгия, Франция, СССР и др.' },
+  europe2:       { label: '🇪🇺 Европа — часть 2',                  description: 'Чехословакия, Швеция, Югославия и др.' },
+  asia:          { label: '🌏 Азия',                               description: 'Япония, Персия, Монголия, Турция и др.' },
+  north_america: { label: '🌎 Северная и Центральная Америка',     description: 'США, Канада, Мексика, Куба и др.' },
+  south_america: { label: '🌎 Южная Америка',                     description: 'Бразилия, Аргентина, Чили и др.' },
+  africa_oceania:{ label: '🌍 Африка и Океания',                  description: 'Египет, Австралия, ЮАС и др.' },
+};
+
+// Начальные назначения стран (из исходного списка сервера)
+const INITIAL_ASSIGNMENTS = [
+  { country: 'Ватикан',              userId: '1412803386637680790', username: 'preset' },
+  { country: 'Веймарская Республика',userId: '1516324053923790918', username: 'preset' },
+  { country: 'Великобритания',       userId: '1226768889111904296', username: 'preset' },
+  { country: 'Венгрия',              userId: '784798312061599765',  username: 'preset' },
+  { country: 'Италия',               userId: '862020809656631357',  username: 'preset' },
+  { country: 'СССР',                 userId: '1467788642415149140', username: 'preset' },
+  { country: 'США',                  userId: '1195596012849483808', username: 'preset' },
+  { country: 'Финляндия',            userId: '1454829587568529612', username: 'preset' },
+  { country: 'Югославия',            userId: '958417446283399179',  username: 'preset' },
+  { country: 'Япония',               userId: '890886720114008064',  username: 'preset' },
+  { country: 'Япония',               userId: '1172643339800158222', username: 'preset' },
+];
+
+module.exports = { COUNTRIES, REGIONS, INITIAL_ASSIGNMENTS };
