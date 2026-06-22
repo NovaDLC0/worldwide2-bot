@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('discord.js');
 const { getCountryByUser, removeCountry } = require('../database/db');
 const { successEmbed, errorEmbed, withBanner } = require('../utils/embedBuilder');
 const { isAdmin } = require('../utils/checkPermissions');
-const config = require('../config.json');
+const config = require('../config.js');
 
 module.exports = {
   data: new SlashCommandBuilder()

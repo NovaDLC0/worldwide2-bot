@@ -3,7 +3,7 @@ const { addWarn, getWarnCount, getCountryByUser } = require('../database/db');
 const { errorEmbed, warningEmbed, withBanner, bannerEmbed, logoAttachment } = require('../utils/embedBuilder');
 const { isModerator } = require('../utils/checkPermissions');
 const { doRemoveCountry } = require('./removecountry');
-const config = require('../config.json');
+const config = require('../config.js');
 
 module.exports = {
   data: new SlashCommandBuilder()

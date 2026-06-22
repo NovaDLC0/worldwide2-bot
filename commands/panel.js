@@ -17,7 +17,7 @@ const {
 
 const { COUNTRIES, REGIONS } = require('../data/countries');
 const { baseEmbed, successEmbed, errorEmbed, warningEmbed, withBanner, bannerEmbed, logoAttachment } = require('../utils/embedBuilder');
-const config = require('../config.json');
+const config = require('../config.js');
 
 // === Вспомогательные функции ===
 

@@ -7,7 +7,7 @@ const {
 const { getCountryByUser, setCountry, getAllCountries } = require('../database/db');
 const { successEmbed, errorEmbed, warningEmbed, withBanner, bannerEmbed, logoAttachment } = require('../utils/embedBuilder');
 const { isAdmin } = require('../utils/checkPermissions');
-const config = require('../config.json');
+const config = require('../config.js');
 
 module.exports = {
   data: new SlashCommandBuilder()
