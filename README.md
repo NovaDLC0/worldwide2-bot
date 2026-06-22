@@ -55,3 +55,4 @@ const BANNER_URL = 'https://ссылка-на-ваш-баннер.png';
 
 Изменение имени бота через `client.user.setUsername()` имеет строгий лимит Discord (2 раза в час).
 Рекомендуется задать имя **World Wide** вручную в Discord Developer Portal.
+# wwbot2
