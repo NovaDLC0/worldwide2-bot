@@ -1,5 +1,5 @@
 const { ActivityType, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
-const config = require('../config.json');
+const config = require('../config.js');
 const { getAutoMessage, getCountryHoldersMap, deleteAutoMessage, seedInitialData } = require('../database/db');
 const { countryListEmbed, bannerEmbed, logoAttachment } = require('../utils/embedBuilder');
 
