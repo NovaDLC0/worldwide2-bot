@@ -141,7 +141,7 @@ process.on('unhandledRejection', err => console.error('[Процесс] Необ
 process.on('uncaughtException',  err => console.error('[Процесс] Необработанное исключение:', err));
 
 // === Запуск ===
-client.login(config.token).catch(err => {
+client.login(process.env.TOKEN || config.token).catch(err => {
   console.error('[Авторизация] Не удалось подключиться:', err.message);
   process.exit(1);
 });
